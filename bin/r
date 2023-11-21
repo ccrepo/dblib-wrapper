@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. ./env
+
+clear
+
+cd ..
+
+pwd   
+
+#./gradlew --rerun-tasks runTest
+
+echo "RUNDIR $RUNDIR"
+
+#$RUNDIR/dblib-wrapperTest -log debug -server-type sqlite -l1 -2 -d1 3.4028234e38f
+
+"$RUNDIR/dblib-wrapperTest" -log debug -server-type sqlite

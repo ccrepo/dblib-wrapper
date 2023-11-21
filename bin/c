@@ -1,0 +1,12 @@
+#!/bin/bash
+. ./env
+
+clear
+
+cd ..
+
+pwd   
+
+./gradlew clean
+
+./gradlew build

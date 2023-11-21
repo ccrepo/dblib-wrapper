@@ -1,0 +1,45 @@
+!/bin/bash
+
+if [[ "$OSTYPE" =~ ^darwin ]]
+then
+  
+  echo 'running on macOS (darwin)'
+  
+  export RUNDIR=./dblib-wrapper/build/exe/test/macos/
+  
+elif [[ "$OSTYPE" =~ ^linux ]]
+then
+  
+  echo 'running on linux'
+  
+  if [[ $(uname -m)  == 'aarch64' ]]
+  then
+  
+    echo "cannot build on aarch64 platform"
+  
+    exit 1
+  
+  elif [[ $(uname -m)  == 'x86_64' ]]
+  
+  then
+  
+    echo "linux x86 64 ok"
+  
+    export RUNDIR=./dblib-wrapper/build/exe/test/linux/
+  
+  else
+  
+    echo "cannot build on this platform"
+  
+    exit 1
+  
+  fi
+
+else
+
+  echo "OS not supported OSTYPE is '$OSTYPE'"
+
+  exit 1
+fi
+
+echo "bye"
